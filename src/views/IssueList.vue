@@ -48,21 +48,19 @@ export default {
             })
         },
         closeIssue(index){
-            const target = this.issues[index];
-            console.log(process.env.VUE_APP_GITHUB_TOKEN)
-            client.patch(`/issues/${target.number}`,
-                {
-                state: 'closed'
-                },
+        const target = this.issues[index] //--3
+        client.patch(`/issues/${target.number}`, //--4
+            {
+                state: 'closed' // --5
+            },
             )
             .then(() => {
-            this.issues.splice(index, 1);
+            this.issues.splice(index, 1) // --6
         })
         },
-    },
-    // 以下を追加
-    created() {
-        this.getIssues();
+        created() {
+            console.log('created!')
+        }
     }
 }
 </script>

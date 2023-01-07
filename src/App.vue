@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/todo-list">TodoList</router-link> |
-      <router-link to="/issue-list">IssueList</router-link>
+      <router-link to="/issue-list">IssueList</router-link> |
+      <router-link to="/todos-issues" TodoItem="task1" v-on:item="TodoItem = $event">TodosIssues</router-link>
     </div>
     <router-view/>
   </div>
